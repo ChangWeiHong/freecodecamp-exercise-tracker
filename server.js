@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 
 // connect mongodb
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://dbUser:freecodecamp@cluster0.kbwju.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.DB_URI , { useNewUrlParser: true, useUnifiedTopology: true });
 
 // dateformat
 var dateFormat = require("dateformat");
