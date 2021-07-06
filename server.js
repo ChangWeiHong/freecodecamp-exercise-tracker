@@ -93,7 +93,7 @@ app.post("/api/users/:_id/exercises", function(req, res){
   let newExercise = new exercise({
       description: inputDescription,
       duration: parseInt(inputDuration),
-      date: dateFormat(inputDate, "dddd mmmm d yyyy")
+      date: dateFormat(inputDate, "ddd mmm dd yyyy")
   });
   console.log(newExercise)
   user
@@ -141,7 +141,6 @@ app.get("/api/users/:_id/logs", function(req, res){
         
         result.log = result.log.filter((exercise) => {
           let exerciseDate = new Date(exercise.date).getTime()
-          
           return exerciseDate >= fromDate && exerciseDate <= toDate
           
         })
